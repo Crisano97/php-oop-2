@@ -1,12 +1,22 @@
 <?php 
     include_once __DIR__ . "/classes/Product.php";
     include_once __DIR__ . "/classes/Food.php";
+    include_once __DIR__ . "/classes/Toy.php";
+    include_once __DIR__ . "/classes/Gadget.php";
 
     $product = new Product("food", "food food food", 10);
     $food = new Food("bone","solid bone", 10, "dog", "nutritional");
+    $toy = new Toy("bone","sqeezing bone", 10, "rubber", "bone");
+    $gadget = new Gadget("bone","sqeezing bone", 30, "dog house", "plastic", "big");
+
+
 
     var_dump($product);
     var_dump($food);
+    var_dump($toy);
+    var_dump($gadget);
+
+
 
 
 ?>
