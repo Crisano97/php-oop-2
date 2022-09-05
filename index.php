@@ -5,24 +5,25 @@
     include_once __DIR__ . "/classes/Gadget.php";
     include_once __DIR__ . "/classes/User.php";
     include_once __DIR__ . "/classes/RegisteredUser.php";
+    include_once __DIR__ . "/classes/Guest.php";
 
 
 
-    $product = new Product("food", "food food food", 10);
+
     $food = new Food("bone","solid bone", 10, "dog", "nutritional");
-    $toy = new Toy("bone","sqeezing bone", 10, "rubber", "bone");
+    $toy = new Toy("bone","sqeezing bone", 1.49, "rubber", "bone");
     $gadget = new Gadget("bone","sqeezing bone", 30, "dog house", "plastic", "big");
-    $user = new User("pippo","poppi","12/02/2022","pippo.poppi@gmail.com","via disney 14","disneycard",true);
-    $registeredUser = new RegisteredUser("pippo","poppi","12/02/2022","pippo.poppi@gmail.com","via disney 14","disneycard",true,"pippopoppi", "1234321", 20);
+    $registeredUser = new RegisteredUser("pippo","poppi","disneycard",true,"pippopoppi", "1234321", 20);
+    $guest = new Guest("pippo","poppi","disneycard",false,23423424);
 
 
 
-    var_dump($product);
     var_dump($food);
     var_dump($toy);
     var_dump($gadget);
-    var_dump($user);
     var_dump($registeredUser);
+    var_dump($guest);
+
 
 
 
@@ -47,7 +48,7 @@
         Gadget(type, material, petSize)
         User(userNumber, isRegistered)
         RegisteredUser(name, surname, username, address, email, dateOfBirth, password)
-        GuestUser()
+        GuestUser(guestCode)
         MethodOfPayement(number, date)
      -->
 </body>
