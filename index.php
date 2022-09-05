@@ -13,7 +13,7 @@
     $toy = new Toy("bone","sqeezing bone", 10, "rubber", "bone");
     $gadget = new Gadget("bone","sqeezing bone", 30, "dog house", "plastic", "big");
     $user = new User("pippo","poppi","12/02/2022","pippo.poppi@gmail.com","via disney 14","disneycard",true);
-    $registeredUser = new User("pippo","poppi","12/02/2022","pippo.poppi@gmail.com","via disney 14","disneycard",true,"pippopoppi", "1234321", 20);
+    $registeredUser = new RegisteredUser("pippo","poppi","12/02/2022","pippo.poppi@gmail.com","via disney 14","disneycard",true,"pippopoppi", "1234321", 20);
 
 
 
