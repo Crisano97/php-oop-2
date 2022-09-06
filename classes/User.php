@@ -1,19 +1,20 @@
 <?php
-
-include_once __DIR__ . "/Card.php";
-
 class User{
-    protected $name;
-    protected $surname;
-    protected $methodOfPayment;
-    protected $isRegistered;
-
-
-    public function __construct($_name, $_surname, $_methodOfPayment, $_isRegistered){
-        $this->name = $_name;
-        $this->surname = $_surname;
-        $this->methodOfPayment = $_methodOfPayment;
-        $this->isRegistered = $_isRegistered;
+    protected $cart = [];
+    
+    public function getCart(){
+        return $this->cart;
+    }
+    public function getCartTotal(){
+        $total = 0;
+        foreach($this->cart as $cartElement){
+            $total += $cartElement->getPrice();
+        }
+        return $total;
+    }
+    public function addProducts(...$products){
+        $this->cart = array_merge($this->cart, $products);
     }
 
+    
 }

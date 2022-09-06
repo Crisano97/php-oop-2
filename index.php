@@ -5,30 +5,19 @@
     include_once __DIR__ . "/classes/Gadget.php";
     include_once __DIR__ . "/classes/User.php";
     include_once __DIR__ . "/classes/RegisteredUser.php";
-    include_once __DIR__ . "/classes/Guest.php";
 
-
-
-
-    $food = new Food("bone","solid bone", 10, "dog", "nutritional");
-    $toy = new Toy("bone","sqeezing bone", 1.49, "rubber", "bone");
-    $gadget = new Gadget("bone","sqeezing bone", 30, "dog house", "plastic", "big");
-    $registeredUser = new RegisteredUser("pippo","poppi","disneycard",true,"pippopoppi", "1234321", 20);
-    $guest = new Guest("pippo","poppi","disneycard",false,23423424);
-
-
-
-    var_dump($food);
-    var_dump($toy);
-    var_dump($gadget);
+    $registeredUser = new RegisteredUser("pippo","pippo@gmail.com","123asdf");
+    $guest = new User();
+    $food = new Food("crocchette","molto croccanti", 4.49, "dog", "false", "di tutto e di piú", "12/20/2050");
+    $toy = new Toy("osso di gomma", "morbido e resistente", 9.99, "dog", "rubber", "red");
+    $registeredUser->addProducts($food);
+    $registeredUser->addProducts($toy);
+    $guest->addProducts($food);
+    $guest->addProducts($toy);
+    echo $registeredUser->getCartTotal();
+    // echo $guest->getCartTotal();
     var_dump($registeredUser);
-    var_dump($guest);
-
-
-
-
-
-
+    // var_dump($guest);
 
 ?>
 

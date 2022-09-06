@@ -2,13 +2,21 @@
 require_once __DIR__ . "/User.php";
 class RegisteredUser extends User{
     protected $username;
+    protected $email;
     protected $password;
-    protected $discount;
 
-    public function __construct($_name, $_surname, $_methodOfPayment, $_isRegistered, $_username, $_password, $_discount){
-        parent::__construct($_name, $_surname, $_methodOfPayment, $_isRegistered);
+    public function __construct($_username, $_email, $_password){
         $this->username = $_username;
+        $this->email = $_email;
         $this->password = $_password;
-        $this->discount = $_discount;
+    }
+
+    public function getUsername(){
+        return $this->username;
+    }
+
+    public function getCartTotal(){
+        $total = parent::getCartTotal();
+        return $total * 0.8;
     }
 }
