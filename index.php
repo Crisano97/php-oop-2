@@ -5,6 +5,8 @@
     include_once __DIR__ . "/classes/Gadget.php";
     include_once __DIR__ . "/classes/User.php";
     include_once __DIR__ . "/classes/RegisteredUser.php";
+    include_once __DIR__ . "/classes/Card.php";
+
 
     $registeredUser = new RegisteredUser("pippo","pippo@gmail.com","123asdf");
     $guest = new User();
@@ -18,7 +20,13 @@
     // echo $guest->getCartTotal();
     var_dump($registeredUser);
     // var_dump($guest);
+    $card = new Card(123454321, "12/20/2022", 1000);
+    var_dump($card);
 
+    var_dump($card->getCardBalance());
+    var_dump($card->isCardValid());
+
+    echo date("m/d/Y");
 ?>
 
 <!DOCTYPE html>
