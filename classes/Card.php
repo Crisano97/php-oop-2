@@ -24,9 +24,9 @@ class Card{
 
     public function isCardValid(){
         if($this->cardExpiringDate > new DateTime()){
-            echo "carta accettata";
+            return true;
         } else {
-            echo "la carta é scaduta";
+            return false;
         }
 
     }

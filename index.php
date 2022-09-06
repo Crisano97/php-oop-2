@@ -21,12 +21,9 @@
     var_dump($registeredUser);
     // var_dump($guest);
     $card = new Card(123454321,"09/10/2023", 1000);
-    var_dump($card);
-
-    var_dump($card->getCardBalance());
     var_dump($card->isCardValid());
-
-    echo date("m/d/Y");
+    $newCardBalance = $card->getCardBalance() - $registeredUser->getCartTotal();
+    echo $newCardBalance;
 ?>
 
 <!DOCTYPE html>

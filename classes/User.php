@@ -1,4 +1,6 @@
 <?php
+
+include_once __DIR__ . "/Card.php";
 class User{
     protected $cart = [];
     
@@ -16,5 +18,4 @@ class User{
         $this->cart = array_merge($this->cart, $products);
     }
 
-    
 }
