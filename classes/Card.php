@@ -6,7 +6,7 @@ class Card{
 
     public function __construct($_cardNumber, $_cardExpiringDate, $_cardBalance){
         $this->cardNumber = $_cardNumber;
-        $this->cardExpiringDate = $_cardExpiringDate;
+        $this->setCardExpiringDate($_cardExpiringDate);
         $this->cardBalance = $_cardBalance;
     }
 
@@ -19,15 +19,16 @@ class Card{
     }
 
     public function setCardExpiringDate($_cardExpiringDate){
-        $this->cardExpiringDate = strtotime($_cardExpiringDate);
+        $this->cardExpiringDate = new DateTime($_cardExpiringDate);
     }
 
     public function isCardValid(){
-        if($this->cardExpiringDate <= date("m/d/Y")){
-            return true;
+        if($this->cardExpiringDate > new DateTime()){
+            echo "carta accettata";
         } else {
             echo "la carta é scaduta";
         }
+
     }
 }
 

@@ -20,7 +20,7 @@
     // echo $guest->getCartTotal();
     var_dump($registeredUser);
     // var_dump($guest);
-    $card = new Card(123454321, "12/20/2022", 1000);
+    $card = new Card(123454321,"09/10/2023", 1000);
     var_dump($card);
 
     var_dump($card->getCardBalance());
